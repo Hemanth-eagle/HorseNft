@@ -34,8 +34,8 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/images/horse-logo.png')} style={styles.logo} />
-            <Text style={styles.title}>Horse Trading NFT</Text>
+            <Image source={require('../assets/horse-logo.png')} style={styles.logo} />
+            <Text style={styles.title}>DeHorses</Text>
             <WalletConnectModal projectId={projectId} providerMetadata={providerMetadata} />
             {!address ? (
                 <>
@@ -46,7 +46,7 @@ const HomeScreen = () => {
                         <Text style={styles.buttonText}>Connect Wallet</Text>
                     </TouchableOpacity>
                     
-                    <TouchableOpacity 
+                    {/* <TouchableOpacity 
                         style={styles.createAccountButton}
                         onPress={() => {
                             // Add logic to guide users to create wallet account
@@ -54,13 +54,19 @@ const HomeScreen = () => {
                         }}
                     >
                         <Text style={styles.buttonText}>Create Wallet Account</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </>
             ) : (
                 <View style={styles.accountInfo}>
                     <Text style={styles.accountText}>
                         Connected: {address}
                     </Text>
+                    <TouchableOpacity 
+                        style={styles.disconnectButton} 
+                        onPress={() => provider?.disconnect()}
+                    >
+                        <Text style={styles.buttonText}>Disconnect Wallet</Text>
+                    </TouchableOpacity>
                 </View>
             )}
         </View>
@@ -153,6 +159,19 @@ const styles = StyleSheet.create({
     accountText: {
         color: '#ffffff',
         fontSize: 16,
+    },
+    disconnectButton: {
+        backgroundColor: '#B91C1C',
+        paddingHorizontal: 24,
+        paddingVertical: 12,
+        borderRadius: 8,
+        width: '80%',
+        marginTop: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
     },
 });
 
