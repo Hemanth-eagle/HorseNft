@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "955344731203",
+    "project_id": "dehorse-1bed4",
+    "storage_bucket": "dehorse-1bed4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955344731203:android:1ea609010985580a93e8f6",
+        "android_client_info": {
+          "package_name": "com.horsenft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955344731203-ij2stt394k1uf1f30vb0kmumpecdn8mm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.horsenft",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "955344731203-qje35hg9vmh48q1rl0469rdsv9n8uort.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCruD4mp0ZWKmSFavBZ12R6MLWeIPa34jU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955344731203-qje35hg9vmh48q1rl0469rdsv9n8uort.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

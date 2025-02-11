@@ -1,3 +1,4 @@
+/* eslint-disable no-catch-shadow */
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, SafeAreaView, StyleSheet, Image, ActivityIndicator } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -22,7 +23,7 @@ const AuthScreen = () => {
 
   const configureGoogleSign = () => {
     GoogleSignin.configure({
-      webClientId:'744658552046-gjvi6liju8h2eo3kio5bk8umdtp3k3ai.apps.googleusercontent.com', // Get this from Google Cloud Console
+      webClientId:'955344731203-qje35hg9vmh48q1rl0469rdsv9n8uort.apps.googleusercontent.com', // Get this from Google Cloud Console
       offlineAccess: true,
       forceCodeForRefreshToken: true,
     });
@@ -33,8 +34,9 @@ const AuthScreen = () => {
       setIsLoading(true);
       setError(null);
       await GoogleSignin.hasPlayServices();
+      console.debug('Google Sign-In has play services');
       const userInfo = await GoogleSignin.signIn();
-      
+
       if (userInfo) {
         // Here you would typically send the userInfo to your backend
         console.log('Google Sign-In Success:', userInfo);
@@ -63,9 +65,10 @@ const AuthScreen = () => {
   const signUserIn = () => {
     // Implement email/password sign in logic here
   };
-  
+
   const toggleAuthMode = () => setIsSignIn(prev => !prev);
 
+  // eslint-disable-next-line react/no-unstable-nested-components
   const MyTextField = ({ value, onChangeText, placeholder, secureTextEntry }: { value: string; onChangeText: (text: string) => void; placeholder: string; secureTextEntry: boolean }) => (
     <View style={styles.textFieldContainer}>
       <TextInput
@@ -92,7 +95,7 @@ const AuthScreen = () => {
           <View style={[styles.shape, styles.shape2]} />
           <View style={[styles.shape, styles.shape3]} />
         </View>
-        
+
         <View style={styles.content}>
           <Text style={styles.title}>
             {isSignIn ? 'Welcome back!' : 'Create Account'}
@@ -135,8 +138,8 @@ const AuthScreen = () => {
 
             <View>
               <View style={styles.socialButtonsContainer}>
-                <TouchableOpacity 
-                  style={[styles.squareTile, isLoading && styles.disabledButton]} 
+                <TouchableOpacity
+                  style={[styles.squareTile, isLoading && styles.disabledButton]}
                   onPress={handleGoogleSignIn}
                   disabled={isLoading}
                 >
@@ -159,7 +162,7 @@ const AuthScreen = () => {
 
           <View style={styles.footer}>
             <Text style={styles.footerText}>
-              {isSignIn ? "Don't have an account?" : "Already have an account?"}
+              {isSignIn ? "Don't have an account?" : 'Already have an account?'}
             </Text>
             <TouchableOpacity onPress={toggleAuthMode}>
               <Text style={styles.footerButton}>
