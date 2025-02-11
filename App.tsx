@@ -18,7 +18,9 @@ import React from 'react';
 //   Colors,
 // } from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/navigator/AppNavigator';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import AuthScreen from './src/screens/AuthScreen';
 
 
 function App(): React.JSX.Element {

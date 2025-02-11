@@ -14,7 +14,6 @@ const providerMetadata = {
       universal: 'http://localhost:8081/',
     },
   };
-
   
 
 const HomeScreen = () => {
